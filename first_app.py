@@ -1,35 +1,24 @@
 from test_fw import Application
-from test_fw import render
+import views
 import datetime
 
 
-def index_view(request):
-    secret = request.get('secret_key', None)
-    date = request.get('date', None)
-    # Используем шаблонизатор
-    return '200 OK', render('index.html', secret=secret, date=date)
-
-
-def about_view(request):
-    secret = request.get('secret_key', None)
-    date = request.get('date', None)
-    # Используем шаблонизатор
-    return '200 OK', render('about.html', secret=secret, date=date)
+roots = {
+    '/': views.index_view,
+    '/about/': views.about_view,
+    '/contact_post/': views.contact_post,
+    '/contact_get/': views.contact_get
+}
 
 
 # Front controllers
 def secret_front(request):
-    request['secret_key'] = 'some secret'
+    request['secret_key'] = roots.keys()
 
 
 def date_front(request):
     request['date'] = datetime.datetime.today()
 
-
-roots = {
-    '/': index_view,
-    '/about/': about_view
-}
 
 front_controllers = [secret_front, date_front]
 

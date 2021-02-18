@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Контакты</title>
+</head>
+<body>
+    date: {{date}}<br>
+    {% for item in secret %}
+        <a href="{{item}}">{{ item }}</a><br>
+    {% endfor %}
+    <h1>Напишите нам сообщение</h1>
+    <form method="get">
+        <input type="text" name="title" placeholder="Заголовок">
+        <input type="text" name="text" placeholder="Текст сообщения">
+        <input type="email" name="email" placeholder="email">
+		<button type="submit">Отправить</button>
+    </form>
+</body>
+</html>

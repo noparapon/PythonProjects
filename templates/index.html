@@ -6,8 +6,11 @@
 </head>
 <body>
     <h1>Обучение Python PRO</h1>
-    <h2>secret: {{secret}}</h2>
-    <h2>date: {{date}}</h2>
+    date: {{date}}<br>
+    {% for item in secret %}
+        <a href="{{item}}">{{ item }}</a><br>
+    {% endfor %}
+
 
 </body>
 </html>
