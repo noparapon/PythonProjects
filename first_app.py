@@ -1,4 +1,4 @@
-from test_fw import Application
+from test_fw import Application, render
 import views
 import datetime
 

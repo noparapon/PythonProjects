@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Index</title>
-</head>
-<body>
-    <h1>Обучение Python PRO</h1>
-    date: {{date}}<br>
-    {% for item in secret %}
-        <a href="{{item}}">{{ item }}</a><br>
-    {% endfor %}
+{% extends "base.html" %}
+{% block title %}
+Обучение Python PRO
+{% endblock %}
 
 
-</body>
-</html>
+{% block body %}
+{% include "inc-menu.html" %}
+<h1>Обучение index.html</h1>
+
+{% endblock %}

@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}
+    About
+{% endblock %}
+
+
+{% block body %}
+{% include "inc-menu.html" %}
     <h1>About</h1>
-    @noparapon<br>
+    @noparapon, 2021<br>
     date: {{date}}<br>
-    {% for item in secret %}
-        <a href="{{item}}">{{ item }}</a><br>
-    {% endfor %}
-</body>
-</html>
+
+{% endblock %}
+
+
